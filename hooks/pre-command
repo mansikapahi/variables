@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+# Set custom environment variable
+export MY_CUSTOM_VAR="custom_value"
+
+# Set internal build number using BUILDKITE_BUILD_NUMBER and BUILDKITE_BRANCH
+export INTERNAL_BUILD_NUMBER="${BUILDKITE_BRANCH}-${BUILDKITE_BUILD_NUMBER}"
+
+echo "Custom variable MY_CUSTOM_VAR set to $MY_CUSTOM_VAR"
+echo "Internal build number set to $INTERNAL_BUILD_NUMBER"
